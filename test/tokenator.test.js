@@ -21,6 +21,7 @@ describe('Making a get request', function(){
       http.get( { 
         host: '127.0.0.1', 
         port: '3000', 
+        agent: false,
         headers: { 
           'Authorization': '7b1a47ab847f7534b507c6ae4a763118' 
         } 
@@ -33,6 +34,7 @@ describe('Making a get request', function(){
       http.get( { 
         host: '127.0.0.1', 
         port: '3000', 
+        agent: false,
         headers: { 
           'Authorization': '7b1a47ab847f7534b507c6ae4a763118' 
         } 
@@ -50,19 +52,19 @@ describe('Making a get request', function(){
   })
   describe('with no token', function(){
     it('should get return a 401 response', function(done){
-      http.get( { host: '127.0.0.1', port: '3000' }, function(res){
+      http.get( { host: '127.0.0.1', port: '3000', agent: false }, function(res){
         assert.strictEqual(res.statusCode, 401);
         done();
       })
     })
     it('should have an application/json header', function(done){
-      http.get( { host: '127.0.0.1', port: '3000' }, function(res){
+      http.get( { host: '127.0.0.1', port: '3000', agent: false }, function(res){
         assert.strictEqual(res.headers['content-type'], 'application/json; charset=utf-8');
         done();
       })
     })
     it('should return an error message as json', function(done){
-      http.get( { host: '127.0.0.1', port: '3000' }, function(res){
+      http.get( { host: '127.0.0.1', port: '3000', agent: false}, function(res){
         var body = '';
         res.on('data', function (chunk) {
           body += chunk;
@@ -79,6 +81,7 @@ describe('Making a get request', function(){
       http.get( { 
         host: '127.0.0.1', 
         port: '3000', 
+        agent: false,
         headers: { 
           'Authorization': 'invalidtoken' 
         } 
@@ -91,6 +94,7 @@ describe('Making a get request', function(){
       http.get( { 
         host: '127.0.0.1', 
         port: '3000', 
+        agent: false,
         headers: { 
           'Authorization': 'invalidtoken' 
         } 
@@ -103,6 +107,7 @@ describe('Making a get request', function(){
       http.get( { 
         host: '127.0.0.1', 
         port: '3000', 
+        agent: false,
         headers: { 
           'Authorization': 'invalidtoken' 
         } 
