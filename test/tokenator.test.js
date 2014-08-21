@@ -22,7 +22,7 @@ describe('Making a get request', function(){
         host: '127.0.0.1', 
         port: '3000', 
         headers: { 
-          'api-token': '7b1a47ab847f7534b507c6ae4a763118' 
+          'Authorization': '7b1a47ab847f7534b507c6ae4a763118' 
         } 
       }, function(res){
         assert.strictEqual(res.statusCode, 200);
@@ -34,7 +34,7 @@ describe('Making a get request', function(){
         host: '127.0.0.1', 
         port: '3000', 
         headers: { 
-          'api-token': '7b1a47ab847f7534b507c6ae4a763118' 
+          'Authorization': '7b1a47ab847f7534b507c6ae4a763118' 
         } 
       }, function(res){
         var body = '';
@@ -80,7 +80,7 @@ describe('Making a get request', function(){
         host: '127.0.0.1', 
         port: '3000', 
         headers: { 
-          'api-token': 'invalidtoken' 
+          'Authorization': 'invalidtoken' 
         } 
       }, function(res){
         assert.strictEqual(res.statusCode, 401);
@@ -92,7 +92,7 @@ describe('Making a get request', function(){
         host: '127.0.0.1', 
         port: '3000', 
         headers: { 
-          'api-token': 'invalidtoken' 
+          'Authorization': 'invalidtoken' 
         } 
       }, function(res){
         assert.strictEqual(res.headers['content-type'], 'application/json; charset=utf-8');
@@ -104,7 +104,7 @@ describe('Making a get request', function(){
         host: '127.0.0.1', 
         port: '3000', 
         headers: { 
-          'api-token': 'invalidtoken' 
+          'Authorization': 'invalidtoken' 
         } 
       }, function(res){
         var body = '';
