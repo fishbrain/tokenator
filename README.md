@@ -12,7 +12,7 @@ via [npm][2]
 
 ## Usage
 
-Tokenator expects the API token to be sent by the client in a header named 'api-token'. 
+Tokenator expects the API token to be sent by the client in the `Authorization` header. The token can be prefixed by an optional method named `token` and a single space.
 
 On the server tokenator expects an array of valid tokens.
 
